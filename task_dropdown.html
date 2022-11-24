@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button
+        {
+            background-color: brown;
+            color: burlywood;
+            width: 100px;
+            padding: 10px;
+            border-radius: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: burlywood;
+            display: block;
+            background-color: brown;
+        }
+        button:hover
+        {
+            background-color: burlywood;
+            color: brown;
+        }
+        .active{
+            display: none;
+            width: 100px;
+        }
+        .one:hover .active{
+            display: block;
+            text-align: center;
+        }
+        .active:hover{
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <button>Click Me</button>
+        <div class="active">
+        <a href="#">Home</a>
+        <a href="#">Contacts</a>
+        <a href="#">Services</a>
+        </div>
+    </div>
+</body>
+</html>
