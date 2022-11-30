@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            opacity:0.8;
+            background-image:url(images.jpg) ;
+            height: 700px;
+            width: 500px;
+            background-size: cover; 
+            background-repeat: no-repeat;
+            margin-left: 50px;
+        }
+        table
+        {
+            width: 300px;
+            background-color: gray;
+            opacity: 0.8;
+            box-shadow: 30px 30px 30px;
+        }
+        caption
+        {
+            opacity: 1;
+            margin-top: 50px;
+            color: white;
+        }
+        tr
+        {
+            margin-top: 10px;
+            padding-top: 10px;
+            text-align: center;
+        }
+        td
+        {
+            color: white;
+            font-size: larger;
+            opacity: 1;
+        }
+        input
+        {
+            color: white;
+            background-color: transparent;
+            border: 0px;
+            border-bottom: 1px solid white ;
+            outline: 0px;
+        }
+        textarea
+        {
+            background-color: transparent;
+            border: 0px;
+            border-bottom: 1px solid white ;
+            outline: none;
+            color: white;
+        }
+        footer
+        {
+            opacity: 1;
+            margin-top: 115px;
+            height: 75px;
+            width: 500px;
+            background-color: gainsboro;
+        }
+        span
+        {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <form method="post">
+            <table>
+                <caption>
+                    <h1>CONTACT<span> US </span></h1><br><br>
+                </caption>
+                <tr>
+                    <td>Your name:</td>
+                    <td><input type="text" name="name" id="name" onblur="validData(this, 'nameerror')"  onkeydown="namecheck(this,'n_error')">
+                    <span id="nameerror"></span><span id="n_error"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><br>Your email:</td>
+                    <td><br><br><input type="email" name="email" id="email"  onblur="validData(this, 'emailerror')"  onkeydown="emailcheck(this,'email_error')">
+                    <span id="emailerror"></span><span id="email_error"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><br>Subject:</td>
+                    <td><br><br><input type="text" name="subject" id="subject"  onblur="validData(this, 'suberror')" onkeydown="subcheck(this,'sub_error')">
+                    <span id="suberror"></span><span id="sub_check"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><br>Your message:</td>
+                    <td><br><br><textarea id="email"  onblur="validData(this, 'msgerror')" onkeydown="msgcheck(this,'msg_error')"></textarea>
+                    <span id="msgerror"></span><span id="msg_error"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="10"><br><br><br>
+                        <input type="submit" name="submit" value="Submit"
+                            style="background-color:yellow; color:black;border-bottom: 0px;">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <footer>
+            CopyRight@html5<br>
+            San Francisco, CA 94126, USA<br>
+            + 01 234 567 89<br>
+            contact@mdbootstrap.com
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function validData(input,msg)
+    {
+        if(input.value == "")
+        {
+            document.getElementById(msg).innerText="Please Enter Data  ";
+            document.getElementById(msg).style.color="red";
+            return false;
+        }
+        else{
+            document.getElementById(msg).innerText="";
+            return true;
+        }
+    }
+    function namecheck(input,msg)
+    {
+        var name = /^[a-zA-z ]+$/
+        if(name.test(input.value))
+        {
+            document.getElementById(msg).innerText="";
+        }
+        else{
+            document.getElementById(msg).innerText="Enter characters only!";
+            document.getElementById(msg).style.color="red";
+            return false;
+        }
+    }
+    function emailcheck(input,msg)
+    {
+        var email =  /^([a-z0-9.-_])+@+([a-z0-9.-_]).([a-z]{3})/
+        if(email.test(input.value))
+        {
+            document.getElementById(msg).innerText="";
+        }
+        else{
+            document.getElementById(msg).innerText="Enter proper mail!";
+            document.getElementById(msg).style.color="red";
+            return false;
+        }
+    }
+    function subcheck(input,msg)
+    {
+        var sub = /^([a-z0-9.-_ ]){15}$/
+        if(sub.test(input.value))
+        {
+            document.getElementById(msg).innerText="";
+        }
+        else{
+            document.getElementById(msg).innerText="please enter 15 characters only!";
+            document.getElementById(msg).style.color="red";
+            return false;
+        }
+    }
+    function msgcheck(input,msg)
+    {
+        var msg = /^([a-z0-9.-_ ]){30}$/
+        if(msg.test(input.value))
+        {
+            document.getElementById(msg).innerText="";
+        }
+        else{
+            document.getElementById(msg).innerText="please enter 30 characters only!";
+            document.getElementById(msg).style.color="red";
+            return false;
+        }
+    }
+</script>
